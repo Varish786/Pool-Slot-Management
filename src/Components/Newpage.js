@@ -1,39 +1,53 @@
 import React from 'react'
 import { useState } from "react";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function Newpage(){
+
+
+export default function Newpage() {
+
+ 
 
   const navigate = useNavigate()
-
-  const[skills,setSkill]=useState("")
-  const[experience,setExperience]=useState("")
-  const[addskills,setAddSkills]=useState("")
-
-const handle=()=>{
+  const initaldata = {
+    skills: "",
+    experience: "",
+    addskills: ""
+  }
+  const [data, setdata] = useState(initaldata)
   
-  const arr = [{"skill":skills},{"experience":experience},{"addskills":addskills}]
- const new_arr = [...arr]
-  localStorage.setItem("data",JSON.stringify(new_arr))
-  // localStorage.setItem("experience",experience)
-  // localStorage.setItem("addskills",addskills)
+  function handleInput(e) {
+    const { value, name } = e.target;
+    setdata({ ...data, [name]: value })
+  }
 
-  navigate("/")
+  const handleSubmit = () => {
+    const local = JSON.parse(localStorage.getItem("Data"))
+    if (local) {
+      local.push(data)
+      localStorage.setItem("Data", JSON.stringify(local))
+     
+    }
+    else {
+      const newlist = [data]
+      localStorage.setItem("Data", JSON.stringify(newlist))
+     
+    }
+    navigate("/")
+  }
 
-}
-
-  return(
+  return (
     <div className="form">
-      <input type="skills" placeholder="Enter your Skills" onChange={(e)=>setSkill(e.target.value)} />
-      <br/>
-      <input type="experience" placeholder="Enter your Experience" onChange={(e)=>setExperience(e.target.value)}/>
-       <br/>
-       <input type="addskills" placeholder="Enter your Additional Skills" onChange={(e)=>setAddSkills(e.target.value)}/>
-       <br/>
-      <button onClick={handle} >Submit</button>
+      <input type="text" placeholder="Enter your Skills" onChange={handleInput} name="skills" value={data.skills} />
+      <br />
+      <input type="number" placeholder="Enter your Experience" onChange={handleInput} name="experience" value={data.experience} />
+      <br />
+      <input type="text" placeholder="Enter your Additional Skills" onChange={handleInput} name="addskills" value={data.addskills} />
+      <br />
+      <button onClick={handleSubmit} >Submit</button>
 
     </div>
-    
+
   )
 }
 
