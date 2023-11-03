@@ -1,0 +1,44 @@
+.container{
+    margin: 0;
+    padding: 0;
+    color:darkslategray;
+    background-color:aqua;
+    width:450px;
+    height: 500px;
+    box-shadow: 0px 0px 20px -5px ;
+    border-radius: 10px;
+    margin: 10px auto auto auto;
+}
+
+.container1{
+    margin: 0;
+    padding: 0;
+    padding: 10px 40px;
+
+}
+
+.btn{
+    margin: 0;
+    padding: 0;
+    width:100px;
+    border-radius: 10px;
+    margin: 10px auto auto auto; 
+
+}
+
+.container2{
+    margin:20px
+    
+}
+
+.form{
+    margin: 0px;
+    padding: 40px;
+    color:darkslategray;
+    background-color:rgba(17, 0, 255, 0.39);
+    width:200px;
+    height: 200px;
+    box-shadow: 0px 0px 20px -5px ;
+    border-radius: 10px;
+    margin: 0px auto auto auto;
+}
