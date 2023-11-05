@@ -19,29 +19,29 @@ function Home() {
         <button onClick={goToNewpage} className='btnin'>Create Polls</button>
       </div>
 
-      <div className='container'>
-        <div className='container1'>
-          <h1> Poll Slots Management </h1>
-        </div>
+      <section className='maincontainer'>
 
-        <div className="container2">
-          <div className='heading'>
-             <p>Skils</p>
-             <p>Experience</p>
-             <p>AddSkills</p>
+        <div className='main'>
+          {getarrofdata && getarrofdata.map((res, ind) =>
+            <div className='card' key={ind}>
+              <h1>Poll Slots Management</h1>
+              <ul>
+                <li className='head'>Skills</li>
+                <li className='head'>Experience</li>
+                <li className='head'>AddSkills</li>
+              </ul>
+
+              <ul>
+                <li>{res.skills}</li>
+                <li>{res.experience}</li>
+                <li>{res.addskills}</li>
+              </ul>
+
             </div>
-          { 
-            getarrofdata && getarrofdata.map((res, ind) =>
-              <div key={ind} className='datadiv'>
-                <p>{res.skills}</p>
-                <p>{res.experience}</p>
-                <p>{res.addskills}</p>
-              </div>
-            )
-            }
+          )}
         </div>
-      </div>
-
+        
+      </section>
     </>
   )
 }

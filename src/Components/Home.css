@@ -1,4 +1,4 @@
-.container{
+/* .container{
     margin: 0;
     padding: 0;
     color:darkslategray;
@@ -8,6 +8,7 @@
     box-shadow: 0px 0px 20px -5px ;
     border-radius: 10px;
     margin: 10px auto auto auto;
+    overflow: auto;
 }
 
 .container1{
@@ -30,17 +31,7 @@
 
 }
 
-.form{
-    margin: 0px;
-    padding: 40px;
-    color:darkslategray;
-    background-color:rgba(17, 0, 255, 0.39);
-    width:200px;
-    height: 200px;
-    box-shadow: 0px 0px 20px -5px ;
-    border-radius: 10px;
-    margin: 0px auto auto auto;
-}
+
 
 .datadiv{
     display: flex;
@@ -63,4 +54,63 @@
 .btnin:hover{
     background-color: aqua;
 }
+ */
 
+ .btn{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.btnin{
+  padding: 10px 40px;
+   background-color: red;
+   border-radius: 10px;
+}
+.btnin:hover{
+    background-color: aqua;
+}
+
+.card{
+  background-color: aqua; 
+  width:450px;
+  height: 500px;
+  box-shadow: 0px 0px 20px -5px ;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+h1{
+    text-align: center;
+    padding-top: 2rem;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1rem;
+    margin: 3rem 0rem
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    flex-wrap: wrap;
+}
+
+
+.form{
+    margin: 0px;
+    padding: 40px;
+    color:darkslategray;
+    background-color:rgba(17, 0, 255, 0.39);
+    width:200px;
+    height: 200px;
+    box-shadow: 0px 0px 20px -5px ;
+    border-radius: 10px;
+    margin: 0px auto auto auto;
+}
+
+.head{
+     font-weight: 700;
+     font-size: large;
+}
